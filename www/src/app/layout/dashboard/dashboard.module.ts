@@ -20,8 +20,8 @@ import { StatModule } from '../../shared';
         CommonModule,
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
-        DashboardRoutingModule,
-        StatModule,
+      DashboardRoutingModule,
+      StatModule,
     ],
     declarations: [
         DashboardComponent,

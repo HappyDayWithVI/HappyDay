@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header>
+    <!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
     <div class="row">
         <div class="col col-xl-6 col-lg-12">
             <div class="card mb-3">
@@ -109,7 +109,22 @@
                 <div class="card-block table-responsive">
                     <table class="table table-bordered">
                         <thead>
-                        <tr>
+                        <tr><div [@routerTransition]>
+    <app-page-header [heading]="'Bootstrap Component'" [icon]="'fa-th-list'"></app-page-header>
+    <app-modal></app-modal>
+    <app-alert></app-alert>
+    <app-buttons></app-buttons>
+    <app-collapse></app-collapse>
+    <app-date-picker></app-date-picker>
+    <app-dropdown></app-dropdown>
+    <app-pagination></app-pagination>
+    <app-pop-over></app-pop-over>
+    <app-progressbar></app-progressbar>
+    <app-tabs></app-tabs>
+    <app-tooltip></app-tooltip>
+    <app-timepicker></app-timepicker>
+</div>
+
                             <th>#</th>
                             <th>First Name</th>
                             <th>Last Name</th>
