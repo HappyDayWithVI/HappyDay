@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpManagerService } from '../http/http.manager';
 
 @Injectable()
-export class UsersManager {
+export class UserManager {
 
   constructor(private httpmanagerService:HttpManagerService){
 

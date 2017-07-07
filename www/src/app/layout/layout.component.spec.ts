@@ -3,7 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { HeaderComponent, SidebarComponent } from '../shared';
+import { HeaderComponent } from '../shared';
+import { SidebarComponent } from '../shared';
 import { LayoutComponent } from './layout.component';
 
 describe('LayoutComponent', () => {
@@ -19,7 +20,7 @@ describe('LayoutComponent', () => {
     ],
       declarations: [
         LayoutComponent,
-        HeaderComponent,
+        HeaderComponent
         SidebarComponent,
       ]
     })

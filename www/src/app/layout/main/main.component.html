@@ -1,0 +1,38 @@
+
+
+      <form [formGroup]="myForm" novalidate (ngSubmit)="afficher(myForm.value)">
+        <div class="form-content">
+          <div class="form-group">
+          <label for="libelle">Que voulez-vous ? :</label>
+          <input id="message" type="text" formControlName="message" placeholder="Message..." required>
+          </div>
+        </div>
+        <button type="submit" class="btn rounded-btn">Valider</button>
+      </form>
+
+<div *ngIf="numero == 2">
+          <div>{{mess.city}}</div>
+              <div>{{mess.temp}}</div>
+                  <div>{{mess.desc}}</div>
+</div>
+
+<div *ngIf="numero == 3">
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Ville</th>
+          <th>Date</th>
+          <th>Temps</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of arrayMessage; let i=index">
+            <th scope="row">{{mess.city}}</th>
+            <td>{{entry.date}}</td>
+            <td>{{entry.temp}}</td>
+            <td>{{entry.desc}}</td>
+          </tr>
+      </tbody>
+    </table>
+ </div>
