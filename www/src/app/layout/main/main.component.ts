@@ -46,15 +46,21 @@ public myForm: FormGroup;
 //
   private setSuccess(data:any){
  		if(!data.error){
-      if (data.id == 2){
+      if (data.id == "1-1"){
           this.numero = 2;
      			this.mess = data.result;
       }
-      else if (data.id == 3)
+      else if (data.id == "1-2")
       {
         this.numero = 3;
         this.mess = data.result;
-        this.arrayMessage = data.result.week
+        this.arrayMessage = data.result.week;
+      }
+      else if (data.id == "2-1" || data.id == "2-2")
+      {
+        this.numero = 4;
+        this.mess = data.result;
+        this.arrayMessage = data.result.shows;
       }
     }
     else {

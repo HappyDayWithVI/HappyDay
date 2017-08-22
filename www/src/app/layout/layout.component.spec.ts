@@ -20,8 +20,8 @@ describe('LayoutComponent', () => {
     ],
       declarations: [
         LayoutComponent,
-        HeaderComponent
-        SidebarComponent,
+        HeaderComponent,
+        SidebarComponent
       ]
     })
     .compileComponents();

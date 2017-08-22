@@ -1,38 +1,57 @@
 
 
       <form [formGroup]="myForm" novalidate (ngSubmit)="afficher(myForm.value)">
-        <div class="form-content">
-          <div class="form-group">
-          <label for="libelle">Que voulez-vous ? :</label>
-          <input id="message" type="text" formControlName="message" placeholder="Message..." required>
-          </div>
-        </div>
+        <span class="input input--haruki">
+          <input class="input__field input__field--isao" id="message" type="text" formControlName="message" required>
+          <label class="input__label input__label--isao" for="message">
+            <span class="input__label-content input__label-content--isao">Que voulez-vous ?</span>
+          </label>
+        </span>
         <button type="submit" class="btn rounded-btn">Valider</button>
       </form>
 
+<p>
 <div *ngIf="numero == 2">
-          <div>{{mess.city}}</div>
-              <div>{{mess.temp}}</div>
-                  <div>{{mess.desc}}</div>
+  <div class="meteoOne">
+    <img class="meteoOneImg" src = "../../../assets/images/icons/{{mess.icon}}.png" height="200" width="200">
+    <div class="meteoOne-body">
+      <h1 class="titreMeteo">{{mess.city}}</h1>
+      <div class="temperature">{{mess.temp}}</div>
+      <p class="description">{{mess.desc}}</p>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="numero == 3">
-    <table class="table">
-      <thead class="thead-inverse">
-        <tr>
-          <th>Ville</th>
-          <th>Date</th>
-          <th>Temps</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let entry of arrayMessage; let i=index">
-            <th scope="row">{{mess.city}}</th>
-            <td>{{entry.date}}</td>
-            <td>{{entry.temp}}</td>
-            <td>{{entry.desc}}</td>
-          </tr>
-      </tbody>
-    </table>
+      <h1 class="titreMeteoAll">{{mess.city}}</h1>
+        <div *ngFor="let entry of arrayMessage; let i=index">
+            <div class="meteoOne">
+              <img class="meteoOneImg" src = "../../../assets/images/icons/{{entry.icon}}.png" height="200" width="200">
+              <div class="meteoOne-body">
+                <div class="dateMeteo">{{entry.date}}</div>
+                <div class="temperature">{{entry.temp}}</div>
+                <p class="description">{{entry.desc}}</p>
+              </div>
+            </div>
+      </div>
  </div>
+
+ <div *ngIf="numero == 4">
+   <h1>{{mess.genre}}</h1>
+     <table class="table">
+       <thead class="thead-inverse">
+         <tr>
+           <th>Couverture</th>
+           <th>Nom</th>
+           <th>Résumé</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let entry of arrayMessage; let i=index">
+            <td><img src="{{entry.image}}" style="width: 100px;"></td>
+             <td>{{entry.name}}</td>
+             <td>{{entry.resume}}</td>
+           </tr>
+       </tbody>
+     </table>
+  </div>

@@ -8,7 +8,16 @@ export class MessageModels {
   public city : string;
   public temp: number;
   public desc: string;
+  public icon: string;
 
   //meteo semaine
   public date: Date;
+
+  //genre serie
+  public genre: string;
+  public name: string;
+  public resume: string;
+  public image: string;
+
+
 }
