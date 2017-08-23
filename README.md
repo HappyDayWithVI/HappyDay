@@ -9,12 +9,12 @@ Step by step tutorial
 First, you need to install php.
 
 On Directory www :
-sudo apt-get install update
-sudo apt-get install php
-sudo apt-get install nodejs npm
+sudo apt-get install update <br>
+sudo apt-get install php <br>
+sudo apt-get install nodejs npm <br>
 
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - <br>
+sudo apt-get install -y nodejs <br>
 
 Be sure to have, mbstring and dom extension install.
 
