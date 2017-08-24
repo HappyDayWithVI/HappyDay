@@ -45,44 +45,44 @@
 
       <div *ngFor="let entry of arrayMessage; let i=index">
 
-        <div *ngIf="i == 0">
-          <div class="container">
-          <div class="light_bg" id="main_weather">
-            <div class="clearfix row">
-              <div class="col">
-                <div id="city">{{mess.city}}</div>
-                <div class="day">{{entry.day}}</div>
-                <div id="date">{{entry.date}}</div>
-              </div>
-              <div class="col">
-                <div id="real_weather">
-                  <img class="icon" src = "../../../assets/images/icons/{{entry.icon}}.png">
-                  <div id="desc">{{entry.desc}}</div>
+          <div *ngIf="i == 0">
+            <div class="container">
+            <div class="light_bg" id="main_weather">
+              <div class="clearfix row">
+                <div class="col">
+                  <div id="city">{{mess.city}}</div>
+                  <div class="day">{{entry.day}}</div>
+                  <div id="date">{{entry.date}}</div>
                 </div>
-              </div>
-              <div class="col temp">
-                {{entry.temp}}<span class="degre">°C</span>
-                <div class="degMin"><i class="fa fa-long-arrow-down" aria-hidden="true"></i> {{entry.min_temp}}°C</div>
-                <div class="degMax"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> {{entry.max_temp}}°C</div>
+                <div class="col">
+                  <div id="real_weather">
+                    <img class="icon" src = "../../../assets/images/icons/{{entry.icon}}.png">
+                    <div id="desc">{{entry.desc}}</div>
+                  </div>
+                </div>
+                <div class="col temp">
+                  {{entry.temp}}<span class="degre">°C</span>
+                  <div class="degMin"><i class="fa fa-long-arrow-down" aria-hidden="true"></i> {{entry.min_temp}}°C</div>
+                  <div class="degMax"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> {{entry.max_temp}}°C</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
+          </div>
 
-      <div *ngIf="i != 0">
-          <div class="light_bg" id="sub_weather">
-      		<div class="colSemaine">
-      			<div class="day">{{entry.short_day}}</div>
-      			<img class="icon" src = "../../../assets/images/icons/{{entry.icon}}.png">
-      			<div class="temp">{{entry.temp}}<span class="degre">°C</span></div>
-      		</div>
-        </div>
-  	 </div>
+        <div *ngIf="i != 0">
+            <div class="light_bg" id="sub_weather">
+        		<div class="colSemaine">
+        			<div class="day">{{entry.short_day}}</div>
+        			<img class="icon" src = "../../../assets/images/icons/{{entry.icon}}.png">
+        			<div class="temp">{{entry.temp}}<span class="degre">°C</span></div>
+        		</div>
+          </div>
+    	 </div>
 
-   </div>
+     </div>
 
-  </div>
+    </div>
   </div>
 </div>
 
@@ -106,4 +106,61 @@
     	</div>
     </div>
   </div>
+</div>
+
+<!-- Personnage Série -->
+<div *ngIf="numero == 5">
+  <div class="container">
+  <div id="character">
+
+  	<div id="banner" class="light_bg">
+      <img class ="banner_img" src="{{mess.image}}" alt="{{mess.serie}}">
+  		<div class="title_section">{{mess.serie}}</div>
+  	</div>
+
+    <div class="row">
+  	  <div *ngFor="let entry of arrayMessage; let i=index">
+
+          		<div class="light_bg">
+          			<div class="box_character">
+                  <img class="character_img" src="{{entry.image}}" alt="{{entry.name_character}}">
+          			</div>
+          			<div class="info">
+          				<div class="name title_section">{{entry.name_character}}</div>
+          				<hr>
+          				{{entry.name_actor}}
+          			</div>
+          		</div>
+
+	   </div>
+  </div>
+
+  </div>
+</div>
+</div>
+
+<!-- Série joué par acteur/actrice -->
+<div *ngIf="numero == 6">
+  <div class="container">
+  <div id="character">
+
+    <div class="row">
+  	  <div *ngFor="let entry of arrayMessage; let i=index">
+
+          		<div class="light_bg">
+          			<div class="box_character">
+                  <img class="character_img" src="{{entry.image}}" alt="{{entry.name_character}}">
+          			</div>
+          			<div class="info">
+          				<div class="name title_section">{{entry.tvshow}}</div>
+          				<hr>
+          				{{entry.character}}
+          			</div>
+          		</div>
+
+	   </div>
+  </div>
+
+  </div>
+</div>
 </div>

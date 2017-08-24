@@ -62,6 +62,18 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.shows;
       }
+      else if (data.id == "2-3")
+      {
+        this.numero = 5;
+        this.mess = data.result.serie_data;
+        this.arrayMessage = data.result.character_data;
+      }
+      else if (data.id == "2-4")
+      {
+        this.numero = 6;
+        this.mess = data.result;
+        this.arrayMessage = data.result.role_data;
+      }
     }
     else {
  			this.setError(data);
