@@ -171,5 +171,4 @@ export class MessageModels {
   public tvshow: string;
   public character: string;
 
-
 }

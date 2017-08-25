@@ -99,13 +99,49 @@
     				<div class="fll info">
     					<div class="name title_section">{{entry.name}}</div>
     					<hr>
-    					<p>{{entry.resume}}</p>
+    					<p class="resume">{{entry.resume}}</p>
+              <button type="button" class="btnModal" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModal(i)">Plus de détails</button>
     				</div>
     			</div>
     		</div>
     	</div>
     </div>
   </div>
+
+
+   <div class="modal" tabindex="-1" id="myModal" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{messModal.name}}</h4>
+          <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+          <div class="modal-body">
+
+            <div class="fll colModal1">
+                <img class="posterModal" src="{{messModal.image}}" alt="{{messModal.name}}">
+            </div>
+            <div class="fll colModal2">
+                <label for="acteur">Acteur : {{messModal.name}}</label>
+                <label for="resume">Resume : {{messModal.resume}}</label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn rounded-btn" data-dismiss="modal">Retour</button>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
 <!-- Personnage Série -->
@@ -114,7 +150,7 @@
   <div id="character">
 
   	<div id="banner" class="light_bg">
-      <img class ="banner_img" src="{{mess.image}}" alt="{{mess.serie}}">
+      <img class="banner_img" src="{{mess.image}}" alt="{{mess.serie}}">
   		<div class="title_section">{{mess.serie}}</div>
   	</div>
 
@@ -149,7 +185,7 @@
 
           		<div class="light_bg">
           			<div class="box_character">
-                  <img class="character_img" src="{{entry.image}}" alt="{{entry.name_character}}">
+                  <img class="character_img" src="{{entry.image}}" alt="{{entry.character}}">
           			</div>
           			<div class="info">
           				<div class="name title_section">{{entry.tvshow}}</div>
@@ -163,4 +199,117 @@
 
   </div>
 </div>
+</div>
+
+<!-- Film -->
+<div *ngIf="numero == 7">
+  <div class="container">
+    <div id="tvshows">
+    	<div *ngFor="let entry of arrayMessage; let i=index">
+    		<div class="light_bg">
+    			<div class="clearfix">
+    				<div class="fll">
+              <img class="poster" src="{{entry.image}}" alt="{{entry.name}}">
+    				</div>
+    				<div class="fll info">
+    					<div class="name title_section">{{entry.name}}</div>
+    					<hr>
+    					<p class="resume">{{entry.resume}}</p>
+              <button type="button" class="btnModal" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModal(i)">Plus de détails</button>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+
+
+   <div class="modal" tabindex="-1" id="myModal" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{messModal.name}}</h4>
+          <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+          <div class="modal-body">
+
+            <div class="fll colModal1">
+                <img class="posterModal" src="{{messModal.image}}" alt="{{messModal.name}}">
+            </div>
+            <div class="fll colModal2">
+                <label for="acteur">Acteur : {{messModal.name}}</label>
+                <label for="resume">Resume : {{messModal.resume}}</label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn rounded-btn" data-dismiss="modal">Retour</button>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Personnage Film -->
+<div *ngIf="numero == 8">
+  <div class="container">
+    <div id="character">
+
+    	<div id="banner" class="light_bg">
+        <img class="banner_img" src="{{mess.image}}" alt="{{mess.movie}}">
+    		<div class="title_section">{{mess.movie}}</div>
+    	</div>
+
+      <div class="row">
+    	  <div *ngFor="let entry of arrayMessage; let i=index">
+
+            		<div class="light_bg">
+            			<div class="box_character">
+                    <img class="chanou$*racter_img" src="{{entry.image}}" alt="{{entry.name_cname_characterharacter}}">
+            			</div>
+            			<div class="info">
+            				<div class="name title_section">{{entry.name_character}}</div>
+            				<hr>
+            				{{entry.name_actor}}
+            			</div>
+            		</div>
+
+  	   </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Film joué par acteur/actrice -->
+<div *ngIf="numero == 9">
+  <div class="container">
+    <div id="character">
+
+      <div class="row">
+    	  <div *ngFor="let entry of arrayMessage; let i=index">
+
+            		<div class="light_bg">
+            			<div class="box_character">
+                    <img class="character_img" src="{{entry.image}}" alt="{{entry.character}}">
+            			</div>
+            			<div class="info">
+            				<div class="name title_section">{{entry.movie}}</div>
+            				<hr>
+            				{{entry.character}}
+            			</div>
+            		</div>
+  	   </div>
+     </div>
+
+    </div>
+  </div>
 </div>

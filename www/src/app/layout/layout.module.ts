@@ -8,12 +8,20 @@ import { LayoutComponent } from './layout.component';
 import { HeaderComponent } from '../shared';
 import { SidebarComponent } from '../shared';
 
+import { RouterModule } from '@angular/router';
+import { MainModule } from './main/main.module';
+
+import { ModalModule } from 'ngx-bootstrap';
+
 @NgModule({
     imports: [
         CommonModule,
         NgbDropdownModule.forRoot(),
         LayoutRoutingModule,
-        TranslateModule
+        TranslateModule,
+        RouterModule,
+        MainModule,
+        ModalModule
     ],
     declarations: [
         LayoutComponent,

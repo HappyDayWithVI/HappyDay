@@ -44,9 +44,10 @@ margin-left: 10px;
 	z-index: 1;
 	display: inline-block;
 	margin: 1em;
-	max-width: 350px;
+	max-width: 700px;
 	width: calc(100% - 2em);
 	vertical-align: top;
+    font-size: 20px;
 }
 
 .input__field {
@@ -90,6 +91,7 @@ margin-left: 10px;
 	display: block;
 	padding: 1.6em 0;
 	width: 100%;
+  font-size: 20px;
 }
 
 .graphic {
@@ -207,6 +209,32 @@ hr{
 	margin-top: 0;
 }
 
+.btnModal {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -moz-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -ms-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -o-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: linear-gradient(to bottom, #f6ad76, #fa696f);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btnModal:hover {
+  background: #9ca9bb;
+  background-image: -webkit-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -moz-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -ms-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -o-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: linear-gradient(to bottom, #9ca9bb, #f6ad76);
+  text-decoration: none;
+}
 /* ==========================================================================
    WEATHER VIEW
 ============================================================================= */
@@ -319,9 +347,35 @@ hr{
 }
 
 #tvshows .info{
-	width: 78%;
+	  width: 78%;
     margin-left: 25px;
     text-align: justify;
+}
+
+#tvshows .resume{
+  font-size: 15px;
+}
+
+/* Modal  */
+
+.modal.modal-wide .modal-dialog {
+  width: 50%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+.posterModal{
+	width: 200px;
+}
+
+.colModal1{
+
+}
+
+.colModal2{
+  width: 50%;
+  margin-left: 25px;
 }
 
 /* Characters from tvshow  */

@@ -7,13 +7,16 @@ import { MainComponent } from './main.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ModalModule } from 'ngx-bootstrap';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     MainRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   declarations: [MainComponent]
 })
