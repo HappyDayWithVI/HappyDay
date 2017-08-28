@@ -11,15 +11,22 @@ import { MessageManager } from '../../shared/services/message/message.manager';
 import { MessageModels } from '../../shared/models/message/message.models';
 //import { HistoActiviteModels } from '../../shared/models/histoActivite/histoActivite.models';
 
+import { MovieManager } from '../../shared/services/movie/movie.manager';
+import { MovieModels } from '../../shared/models/movie/movie.models';
+
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   	moduleId: module.id,
     selector: 'app-main',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
-    providers: [MessageManager]
+    providers: [MessageManager, MovieManager]
 })
 
 export class MainComponent {
+
+ kyou: SafeResourceUrl;
 
  error:string = "";
 
@@ -29,23 +36,28 @@ export class MainComponent {
 
 	arrayMessage:Array<MessageModels> = [];
 	mess = new MessageModels();
+  mess_result_id = new MessageModels();
   numero: number = 0;
+
+ movie = new MovieModels();
+ movieModal = new MovieModels();
+ arrayMovie:Array<MovieModels> = [];
 
 public myForm: FormGroup;
 
-    constructor(public MessageManage:MessageManager, private router: Router){
+    constructor(public MessageManage:MessageManager, public MovieManage:MovieManager, public sanitizer: DomSanitizer, private router: Router){
 
       this.myForm = new FormGroup({
         message: new FormControl(''),
        });
     }
 
-
     public showAddModal(id:number):void {
-  		this.titleModal = "Fiche Détaillé";
-  	  this.messModal.name = this.arrayMessage[id].name;
-      this.messModal.resume = this.arrayMessage[id].resume;
-  	  this.messModal.image = this.arrayMessage[id].image;
+      this.MovieManage.getMovie(id)
+        .subscribe(
+          (data) => this.setSuccessMovie(data),
+          (err) => this.setError(err.json())
+       );
   	}
 
     afficher(data:any): void {
@@ -63,7 +75,7 @@ public myForm: FormGroup;
           this.numero = 2;
      			this.mess = data.result;
       }
-      // météo semaine <ville>
+      // météo semaine <ville>serie
       else if (data.id == "1-2")
       {
         this.numero = 3;
@@ -77,7 +89,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.shows;
       }
-      // série personnage <nomserie>
+      // série personnage <nidMovieomserie>
       else if (data.id == "2-3")
       {
         this.numero = 5;
@@ -85,7 +97,7 @@ public myForm: FormGroup;
         this.arrayMessage = data.result.character_data;
       }
       // <acteur/actrice> joué dans <nomserie>
-      else if (data.id == "2-4")
+      else if (data.id == "import { Sanitize } from 'angular-sanitize';2-4")
       {
         this.numero = 6;
         this.mess = data.result;
@@ -96,6 +108,9 @@ public myForm: FormGroup;
       {
         this.numero = 7;
         this.arrayMessage = data.result;
+
+        //this.mess_result_id = data.result.id;
+
       }
       // film personnage <nomfilm>
       else if (data.id == "3-2")
@@ -120,5 +135,20 @@ public myForm: FormGroup;
  private setError(err:any){
    this.error = err.message;
  }
+
+  private setSuccessMovie(data:any){
+    this.movieModal.name =  data.result.name;
+    this.movieModal.image =  data.result.image;
+    this.movieModal.resume =  data.result.resume;
+    this.movieModal.video =  data.result.video;
+    this.movieModal.rating =  data.result.rating;
+    this.movieModal.year =  data.result.year;
+    this.movieModal.runtime = data.result.runtime;
+    this.movieModal.genre = data.result.genre;
+  }
+
+  cleanURL(oldURL : string): SafeResourceUrl{
+  return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL);
+  }
 
 }

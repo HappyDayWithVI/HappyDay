@@ -20,6 +20,7 @@ export class MessageModels {
 //     "icon": "10"
 //   }
 // }
+  public id: number;
   public city: string;
   public date: Date;
   public day: string;
