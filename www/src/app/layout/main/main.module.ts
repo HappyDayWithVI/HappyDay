@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -9,6 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ModalModule } from 'ngx-bootstrap';
 
+import { SpinnerModule } from 'angular-spinners';
+
+import { CarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +22,9 @@ import { ModalModule } from 'ngx-bootstrap';
     MainRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SpinnerModule,
+    CarouselModule
   ],
   declarations: [MainComponent]
 })
