@@ -10,10 +10,7 @@ export class MessageManager {
   }
 
   getMessage(data:any){
-  	console.log( document.getElementById("message").innerHTML );
-  	var unit = document.getElementById("message");
-
-
-    return this.httpmanagerService.get('message/' + data.message)
+  	var message = (<HTMLInputElement>document.getElementById("message")).value;
+    return this.httpmanagerService.get('message/' + message);
   }
 }

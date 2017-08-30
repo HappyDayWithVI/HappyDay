@@ -55,14 +55,12 @@ function send() {
 
 function getResponseVoice(val){
 	$('.input__field.input__field--isao').val(val);
-	$('.input__field.input__field--isao').attr('value', val);
 	$.ajax({
 		url: "http://api.tutosweb.dev/message/" + val,
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data.message));
-			// responsiveVoice.speak(JSON.stringify(data.message), "French Female");
+			responsiveVoice.speak(JSON.stringify(data.message), "French Female");
 		}
 	});
 }
