@@ -5,7 +5,7 @@ import { Http, Headers } from '@angular/http';
 export class HttpManagerService {
 
   //public url:string = "http://192.168.1.115:8000";
-  public url:string = "http://localhost:8083";
+  public url:string = "http://localhost:8080";
   //public clientSecret:string = 'CDJlZYPbdvcRCapMdYy3uscavSEcGThCfmbct61B';
   private headers:Headers = new Headers();
 

@@ -36,12 +36,14 @@ export class MainComponent {
 
 	arrayMessage:Array<MessageModels> = [];
 	mess = new MessageModels();
-  mess_result_id = new MessageModels();
+
   numero: number = 0;
 
  movie = new MovieModels();
  movieModal = new MovieModels();
  arrayMovie:Array<MovieModels> = [];
+
+ uri_release:string = "";
 
 public myForm: FormGroup;
 
@@ -67,7 +69,7 @@ public myForm: FormGroup;
         (err) => this.setError(err.json())
      );
     }
-//
+
   private setSuccess(data:any){
  		if(!data.error){
       // météo <ville>
@@ -126,12 +128,48 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
+      //musique nouveautés
+      else if (data.id == "10-0")
+      {
+        this.numero = 10;
+        this.mess = data.result;
+        this.arrayMessage = data.result.new_releases;
+      }
+      //musique albums
+      else if (data.id == "10-1")
+      {
+        this.numero = 11;
+        this.mess = data.result;
+        this.arrayMessage = data.result.albums;
+      }
+      //musique artiste
+      else if (data.id == "10-2")
+      {
+        this.numero = 12;
+        this.mess = data.result;
+        this.arrayMessage = data.result.artist;
+      }
+      //musique chanson
+      else if (data.id == "10-3")
+      {
+        this.numero = 13;
+        this.mess = data.result;
+        this.arrayMessage = data.result.tracks;
+      }
+      //musique playlist
+      else if (data.id == "10-4")
+      {
+        this.numero = 14;
+        this.mess = data.result;
+        this.arrayMessage = data.result.playlists;
+      }
     }
+
     else {
  			this.setError(data);
  		}
  	}
-//
+
  private setError(err:any){
    this.error = err.message;
  }
@@ -146,6 +184,7 @@ public myForm: FormGroup;
     this.movieModal.runtime = data.result.runtime;
     this.movieModal.genre = data.result.genre;
   }
+
 
   cleanURL(oldURL : string): SafeResourceUrl{
   return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL);
