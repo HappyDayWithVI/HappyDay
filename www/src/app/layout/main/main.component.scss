@@ -295,18 +295,86 @@ hr{
 .resumeLivre {
   position: absolute;
   width: 260px;
-  bottom: 15px;
   text-align: center;
   font-weight: bold;
   padding: 20px;
 }
 
+#bannerTv{
+background: rgba(255, 255, 255, 0.3);
+border-radius: 3px;
+height: 32px;
+margin-bottom: 5px;
+}
+
+.heureColonne {
+  text-align: center;
+  width: 11%;
+  height: 100px;
+}
+
+.heure {
+  font-size: 20px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.time{
+  font-size: 16px;
+  position: relative;
+  top: 35px;
+}
+
+.chaine{
+  font-size: 20px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelTv{
+  width: 88%;
+  height: 100px;
+}
+
 .channelProgramme{
-  background-color: red;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.titleTv{
+  font-size: 14px;
+}
+
+#character .box_Restaurant{
+  width: 245px;
+  height: 220px;
+}
+
+#character .infoRestaurant{
+  color: white;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+#character .infoDetailsRestaurant {
+padding: 20px;
+position: relative;
+font-size: 12px;
+font-weight: bold;
+color: orange;
+background-color: rgba(0,0,0,0.6);
+height: 100%;
 }
 
 .nameRestaurant{
-font-weight: bold;
+font-size: 22px;
+padding: 10px;
+}
+
+agm-map {
+    height: 300px;
 }
 /* ==========================================================================
    WEATHER VIEW

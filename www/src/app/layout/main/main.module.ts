@@ -15,6 +15,8 @@ import { SpinnerModule } from 'angular-spinners';
 import { CarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +26,11 @@ import 'hammerjs';
     ReactiveFormsModule,
     ModalModule.forRoot(),
     SpinnerModule,
-    CarouselModule
+    CarouselModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyAwcL3UxLjA7Cm9hIzOxZSvhLxZyGkJ1xM",
+      libraries: ["places"]
+    })
   ],
   declarations: [MainComponent]
 })

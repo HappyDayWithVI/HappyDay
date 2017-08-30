@@ -1,6 +1,6 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef, NgZone, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -14,11 +14,14 @@ import { MessageModels } from '../../shared/models/message/message.models';
 import { MovieManager } from '../../shared/services/movie/movie.manager';
 import { MovieModels } from '../../shared/models/movie/movie.models';
 
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { SafeResourceUrl, DomSanitizer, BrowserModule } from '@angular/platform-browser';
 
 import { SpinnerService } from 'angular-spinners';
 
 import { Carousel } from 'ngx-carousel';
+
+import { } from 'googlemaps';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 @Component({
   	moduleId: module.id,
@@ -30,7 +33,10 @@ import { Carousel } from 'ngx-carousel';
 
 export class MainComponent {
 
- kyou: SafeResourceUrl;
+  public latitude: number;
+  public longitude: number;
+  public searchControl: FormControl;
+  public zoom: number;
 
 public carouselOne: Carousel;
 
@@ -50,9 +56,12 @@ public carouselOne: Carousel;
  movieModal = new MovieModels();
  arrayMovie:Array<MovieModels> = [];
 
+ @ViewChild("search")
+ public searchElementRef: ElementRef;
+
 public myForm: FormGroup;
 
-    constructor(public MessageManage:MessageManager, public MovieManage:MovieManager, public sanitizer: DomSanitizer, protected spinnerService: SpinnerService, private router: Router){
+    constructor(public MessageManage:MessageManager, public MovieManage:MovieManager, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, public sanitizer: DomSanitizer, protected spinnerService: SpinnerService, private router: Router){
 
       this.myForm = new FormGroup({
         message: new FormControl(''),
@@ -70,7 +79,50 @@ public myForm: FormGroup;
          custom: 'banner',
          dynamicLength: true
        }
-     }
+
+      //  this.zoom = 4;
+      //  this.latitude = 39.8282;
+      //  this.longitude = -98.5795;
+       //
+      //  //create search FormControl
+      //  this.searchControl = new FormControl();
+       //
+      //  //set current position
+      //  this.setCurrentPosition();
+       //
+      //  //load Places Autocomplete
+      //  this.mapsAPILoader.load().then(() => {
+      //    let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+      //      types: ["address"]
+      //    });
+      //    autocomplete.addListener("place_changed", () => {
+      //      this.ngZone.run(() => {
+      //        //get the place result
+      //        let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+       //
+      //        //verify result
+      //        if (place.geometry === undefined || place.geometry === null) {
+      //          return;
+      //        }
+       //
+      //        //set latitude, longitude and zoom
+      //        this.latitude = place.geometry.location.lat();
+      //        this.longitude = place.geometry.location.lng();
+      //        this.zoom = 12;
+      //      });
+      //    });
+      //  });
+      }
+
+      // private setCurrentPosition() {
+      //     if ("geolocation" in navigator) {
+      //       navigator.geolocation.getCurrentPosition((position) => {
+      //      this.latitude = position.coords.latitude;
+      //      this.longitude = position.coords.longitude;
+      //      this.zoom = 12;
+      //    });
+      //   }
+      // }
 
     public showAddModalSerie(id:number):void {
       this.messModal.name = this.arrayMessage[id].name;
