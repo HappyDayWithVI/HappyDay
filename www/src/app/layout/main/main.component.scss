@@ -388,6 +388,44 @@ padding: 10px;
 agm-map {
     height: 300px;
 }
+
+#information_musique {
+      padding: 20px;
+}
+
+.music_textcontents_details {
+  text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin-top: 10px;
+}
+
+.music_textcontents {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.musicdetail{
+height: 100px;
+}
+
+#informations_artiste {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.music_textcontents_genre{
+  font-size: 20px;
+  color: white;
+}
+
 /* ==========================================================================
    WEATHER VIEW
 ============================================================================= */
@@ -604,6 +642,11 @@ max-width: 180px;
     margin-top: 5px;
 }
 
+#elements{
+  width: 1030px;
+    height: 400px;
+}
+
 @media screen and (max-width: 1199px) {
 
   #main_weather .degMin {
@@ -767,6 +810,11 @@ max-width: 180px;
 
 .resumeLivre {
     width: 150px;
+}
+
+.spotify {
+  width: 870px !important;
+  height: 400px;
 }
 
 }

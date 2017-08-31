@@ -57,7 +57,7 @@ function send() {
 function getResponseVoice(val){
 	$('.input__field.input__field--isao').val(val);
 	$.ajax({
-		url: "http://localhost:8080/message/" + val,
+		url: "http://localhost:8084/message/" + val,
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data) {

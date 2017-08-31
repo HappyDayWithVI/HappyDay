@@ -220,7 +220,28 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
+      else if (data.id == "3-3")
+      {
+        this.numero = 9;
+        this.mess = data.result;
+        this.arrayMessage = data.result.role_data;
+      }
       //musique nouveautés
+      else if (data.id == "4-1" || data.id == "4-2" )
+      {
+        this.numero = 10;
+        this.arrayMessage = data.result;
+      }
+      else if (data.id == "5-1" || data.id == "5-2" )
+      {
+        this.numero = 12;
+        this.arrayMessage = data.result;
+      }
+      else if (data.id == "6-1" || data.id == "6-2" )
+      {
+        this.numero = 11;
+        this.arrayMessage = data.result;
+      }
       else if (data.id == "10-0")
       {
         this.numero = 13;

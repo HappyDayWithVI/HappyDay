@@ -332,15 +332,15 @@
 </div>
 
 <div *ngIf="numero == 13">
-    <div class="container">
+    <div class="container spotify">
       <div id="character">
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-              <div class="fll" id="information_nouveauté">
+              <div class="fll" id="information_musique">
                 <div class="name title_section">{{entry.name}}</div>
-                <div class="music_textcontents">Artist: {{entry.artist_name}}</div>
-                <iframe id="elements" [src]="cleanURL(entry.uri)" width="1030" height="400" frameborder="0" allowtransparency="true"></iframe>
+                <div class="music_textcontents">Artiste: {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" frameborder="0" allowtransparency="true"></iframe>
               </div>
           </div>
         </div>
@@ -355,10 +355,10 @@
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-              <div class="fll" id="information_album">
+              <div class="fll" id="information_musique">
                 <div class="name title_section">{{entry.name}}</div>
-                <div class="music_textcontents">Artist: {{entry.artist_name}}</div>
-                <iframe id="elements" [src]="cleanURL(entry.uri)" width="1030" height="400" frameborder="0" allowtransparency="true"></iframe>
+                <div class="music_textcontents">Artiste: {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" frameborder="0" allowtransparency="true"></iframe>
               </div>
             </div>
           </div>
@@ -373,13 +373,13 @@
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-              <div class="fll" id="elements">
+              <div class="fll" id="information_musique">
                 <div class="name title_section">{{entry.name}}</div>
                 <iframe [src]="cleanURL(entry.uri)" width="800" height="300" frameborder="0" allowtransparency="true"></iframe>
               </div>
               <div class="fll info" id="informations_artiste">
                 <hr>
-                <div class="music_textcontents">Genre: </div>
+                <div class="music_textcontents_genre">Genre</div>
                 <div class="music_textcontents" *ngFor="let name of entry.genres">{{name}}</div>
               </div>
             </div>
@@ -394,15 +394,15 @@
       <div id="character">
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
-            <div class="clearfix">
+            <div class="clearfix musicdetail">
               <div class="fll">
-                <iframe id="elements" [src]="cleanURL(entry.uri)" width="800" height="300" frameborder="0" allowtransparency="true"></iframe>
+                <iframe id="information_musique" [src]="cleanURL(entry.uri)" width="800" height="110" frameborder="0" allowtransparency="true"></iframe>
               </div>
-              <div class="fll info" id="informations_track">
+              <div class="fll info" id="information_musique_details">
                 <hr>
-                <p class="music_textcontents">Durrée: {{entry.duration}}</p>
-                <p class="music_textcontents">Album: {{entry.album_name}}</p>
-                <p class="music_textcontents">track_artist_name: {{entry.album_name}}</p>
+                <p class="music_textcontents_details">Durée : {{entry.duration}}</p>
+                <p class="music_textcontents_details">Album : {{entry.album_name}}</p>
+                <p class="music_textcontents_details">Titre : {{entry.album_name}}</p>
               </div>
             </div>
           </div>
@@ -416,9 +416,9 @@
       <div id="character">
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
-            <div class="clearfix" id="information_playlist">
+            <div class="clearfix" id="information_musique">
               <div class="name title_section">{{entry.name}}</div>
-              <div class="music_textcontents">Propriétaire: {{entry.owner_name}}</div>
+              <div class="music_textcontents">Propriétaire : {{entry.owner_name}}</div>
               <div class="fll info" id="elements">
                 <iframe [src]="cleanURL(entry.uri)" width="1000" height="400" frameborder="0" allowtransparency="true"></iframe>
               </div>
