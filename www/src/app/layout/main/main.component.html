@@ -327,14 +327,10 @@
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-              <div class="fll">
-                <img class="poster" src="{{entry.picture}}" alt="{{entry.name}}" width=200 height=300>
-              </div>
-              <div class="fll info">
+              <div class="fll" id="information_nouveauté">
                 <div class="name title_section">{{entry.name}}</div>
-                <hr>
-                <p class="artiste">{{entry.artist_name}}</p>
-                <iframe [src]="cleanURL(entry.uri)" width="300" height="180" frameborder="0" allowtransparency="true"></iframe>
+                <div class="music_textcontents">Artist: {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" width="1030" height="400" frameborder="0" allowtransparency="true"></iframe>
               </div>
           </div>
         </div>
@@ -349,16 +345,10 @@
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-            <div id="titre_album" class="name title_section">{{entry.name}}</div>
-              <div class = "artiste_album">
-                <p class="artiste">Artiste: {{entry.artist_name}}</p>
-              </div>
-              <div id="image_album" class="fll">
-                <img class="poster" src="{{entry.picture}}" alt="{{entry.name}}" width=200 height=300>
-              </div>
-              <div class="fll info" id="iframeAlbums" >
-                <hr>
-                <iframe [src]="cleanURL(entry.uri)" width="320" height="300" frameborder="0" allowtransparency="true"></iframe>
+              <div class="fll" id="information_album">
+                <div class="name title_section">{{entry.name}}</div>
+                <div class="music_textcontents">Artist: {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" width="1030" height="400" frameborder="0" allowtransparency="true"></iframe>
               </div>
             </div>
           </div>
@@ -373,14 +363,14 @@
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
             <div class="clearfix">
-              <div class="fll">
-                <img class="poster" src="{{entry.picture}}" alt="{{entry.name}}" width=200 height=300>
-              </div>
-              <div class="fll info">
+              <div class="fll" id="elements">
                 <div class="name title_section">{{entry.name}}</div>
+                <iframe [src]="cleanURL(entry.uri)" width="800" height="300" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+              <div class="fll info" id="informations_artiste">
                 <hr>
-                <p class="artiste">{{entry.artist_name}}</p>
-                <iframe [src]="cleanURL(entry.uri)" width="300" height="280" frameborder="0" allowtransparency="true"></iframe>
+                <div class="music_textcontents">Genre: </div>
+                <div class="music_textcontents" *ngFor="let name of entry.genres">{{name}}</div>
               </div>
             </div>
           </div>
@@ -396,13 +386,13 @@
           <div class="light_bg">
             <div class="clearfix">
               <div class="fll">
-                <img class="poster" src="{{entry.picture}}" alt="{{entry.name}}" width=300 height=400>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" width="800" height="300" frameborder="0" allowtransparency="true"></iframe>
               </div>
-              <div class="fll info">
-                <div class="name title_section">{{entry.name}}</div>
+              <div class="fll info" id="informations_track">
                 <hr>
-                <p class="artiste">{{entry.artist_name}}</p>
-                <iframe [src]="cleanURL(entry.uri)" width="300" height="280" frameborder="0" allowtransparency="true"></iframe>
+                <p class="music_textcontents">Durrée: {{entry.duration}}</p>
+                <p class="music_textcontents">Album: {{entry.album_name}}</p>
+                <p class="music_textcontents">track_artist_name: {{entry.album_name}}</p>
               </div>
             </div>
           </div>
@@ -416,15 +406,11 @@
       <div id="character">
         <div *ngFor="let entry of arrayMessage; let i=index">
           <div class="light_bg">
-            <div class="clearfix">
-              <div class="fll">
-                <img class="poster" src="{{entry.picture}}" alt="{{entry.name}}" width=300 height=400>
-              </div>
-              <div class="fll info">
-                <div class="name title_section">{{entry.name}}</div>
-                <hr>
-                <p class="artiste">{{entry.artist_name}}</p>
-                <iframe [src]="cleanURL(entry.uri)" width="300" height="280" frameborder="0" allowtransparency="true"></iframe>
+            <div class="clearfix" id="information_playlist">
+              <div class="name title_section">{{entry.name}}</div>
+              <div class="music_textcontents">Propriétaire: {{entry.owner_name}}</div>
+              <div class="fll info" id="elements">
+                <iframe [src]="cleanURL(entry.uri)" width="1000" height="400" frameborder="0" allowtransparency="true"></iframe>
               </div>
             </div>
           </div>

@@ -205,6 +205,14 @@ margin-left: 10px;
     color: #fff;
 }
 
+.music_textcontents{
+	text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+
+
 hr{
 	margin-bottom: 0;
 	margin-top: 0;
@@ -415,6 +423,48 @@ max-width: 180px;
     margin-top: 5px;
 }
 
-#iframeAlbums{
-  margin-left: 1%;
+#informations_track{
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+
+}
+
+#informations_artiste{
+    margin-left: 2%;
+    margin-top: 5%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+
+}
+
+#elements{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+
+
+#information_album{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+#information_nouveauté{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+#information_playlist{
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
 }
