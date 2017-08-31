@@ -11,5 +11,25 @@ function onSignIn(googleUser) {
 	$("#g_login").val(id_google);
 	$("#g_login").text(id_google);
 
-	$("#g_login_btn").click();
+
+	var input = $('#g_login');
+	    input.val(id_google);
+	    input.trigger('input'); // Use for Chrome/Firefox/Edge
+	    input.trigger('change'); // Use for Chrome/Firefox/Edge + IE11
+	    console.log(1);
+ 	
+ 	setTimeout(checkVariable, 1000);
+
+ 	$('#gform');
+
 }
+
+function checkVariable() {
+	console.log("timeout");
+	console.log("b : "+id_google);
+   if (id_google !== '') {
+       $("#g_log").click();
+   }else{
+   		console.log("c'est vide : "+id_google);
+   }
+ }

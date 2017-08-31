@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpManagerService } from '../http/http.manager';
 
+// import { UserModels } from '../../models/user/user.models';
+
 @Injectable()
 export class UserManager {
 
@@ -30,5 +32,14 @@ export class UserManager {
 
   deleteUser(data:number){
     return this.httpmanagerService.delete('api/user/'+data)
+  }
+
+  login(data:any){
+    // alert(data);
+    
+    // alert(data.username);
+
+    return this.httpmanagerService.get('login/?username='+data.username+'&password='+data.password);
+    // console.log(data);
   }
 }

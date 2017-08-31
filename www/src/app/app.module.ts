@@ -37,7 +37,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard, HttpManagerService],
+    providers: [AuthGuard, HttpManagerService, { provide: 'Window',  useValue: window }],
     bootstrap: [AppComponent]
 })
 export class AppModule {
