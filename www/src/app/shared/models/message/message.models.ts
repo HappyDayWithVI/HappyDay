@@ -121,6 +121,13 @@ export class MessageModels {
   public name: string;
   public resume: string;
   public image: string;
+  public details: string;
+  public channel: string;
+  public runtime: number;
+  public season: number;
+  public episode: number;
+  public rating: string;
+  public status: string;
 
   //personnage serie
   // http://localhost:8083/message/personnage%20serie%20the%20walking%20dead
@@ -172,4 +179,17 @@ export class MessageModels {
   public tvshow: string;
   public character: string;
 
+  //livre avec <nomlivre> et livre de <nomautheur>
+  public author: string;
+  public published_year: string;
+
+  //Télé
+  public title: string;
+  public time: string;
+
+  //Restaurant
+  public is_closed: string;
+  public price: string;
+  public adress: string;
+  public categories: string;
 }

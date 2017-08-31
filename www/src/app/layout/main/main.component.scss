@@ -233,7 +233,151 @@ hr{
   background-image: -ms-linear-gradient(top, #9ca9bb, #f6ad76);
   background-image: -o-linear-gradient(top, #9ca9bb, #f6ad76);
   background-image: linear-gradient(to bottom, #9ca9bb, #f6ad76);
-  text-decoration: none;
+  text-decoration: none;	background: rgba(255,255,255,.3);
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.double-bounce1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f8a873;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.bannerStyle {
+  min-height: 300px;
+  background: rgba(255,255,255,.3);
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+
+  width: 260px !important;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.bannerStyle h1 {
+  text-align: center;
+  line-height: 300px;
+}
+
+.resumeLivre {
+  position: absolute;
+  width: 260px;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+#bannerTv{
+background: rgba(255, 255, 255, 0.3);
+border-radius: 3px;
+height: 32px;
+margin-bottom: 5px;
+color: white;
+}
+
+.heureColonne {
+  text-align: center;
+  width: 11%;
+  height: 100px;
+  color:white;
+}
+
+.heure {
+  font-size: 20px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.time{
+  font-size: 16px;
+  position: relative;
+  top: 35px;
+}
+
+.chaine{
+  font-size: 20px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelTv{
+  width: 88%;
+  height: 100px;
+  color:white;
+}
+
+.channelProgramme{
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.titleTv{
+  font-size: 14px;
+}
+
+#character .box_Restaurant{
+  width: 245px;
+  height: 220px;
+}
+
+#character .infoRestaurant{
+  color: white;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+#character .infoDetailsRestaurant {
+padding: 20px;
+position: relative;
+font-size: 12px;
+font-weight: bold;
+color: orange;
+background-color: rgba(0,0,0,0.4);
+height: 100%;
+}
+
+.nameRestaurant{
+font-size: 22px;
+padding: 10px;
+}
+
+agm-map {
+    height: 300px;
 }
 /* ==========================================================================
    WEATHER VIEW
@@ -401,7 +545,7 @@ max-width: 180px;
 }
 
 #character div:not(#banner) .title_section{
-	font-size: 20px;
+	font-size: 14px;
 }
 
 #character #banner{

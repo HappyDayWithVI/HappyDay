@@ -1,6 +1,6 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef, NgZone, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -14,7 +14,14 @@ import { MessageModels } from '../../shared/models/message/message.models';
 import { MovieManager } from '../../shared/services/movie/movie.manager';
 import { MovieModels } from '../../shared/models/movie/movie.models';
 
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { SafeResourceUrl, DomSanitizer, BrowserModule } from '@angular/platform-browser';
+
+import { SpinnerService } from 'angular-spinners';
+
+import { Carousel } from 'ngx-carousel';
+
+import { } from 'googlemaps';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 @Component({
   	moduleId: module.id,
@@ -26,7 +33,12 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 export class MainComponent {
 
- kyou: SafeResourceUrl;
+  public latitude: number;
+  public longitude: number;
+  public searchControl: FormControl;
+  public zoom: number;
+
+public carouselOne: Carousel;
 
  error:string = "";
 
@@ -36,6 +48,7 @@ export class MainComponent {
 
 	arrayMessage:Array<MessageModels> = [];
 	mess = new MessageModels();
+  test = new MessageModels();
   mess_result_id = new MessageModels();
   numero: number = 0;
 
@@ -43,16 +56,96 @@ export class MainComponent {
  movieModal = new MovieModels();
  arrayMovie:Array<MovieModels> = [];
 
+ @ViewChild("search")
+ public searchElementRef: ElementRef;
+
 public myForm: FormGroup;
 
-    constructor(public MessageManage:MessageManager, public MovieManage:MovieManager, public sanitizer: DomSanitizer, private router: Router){
+    constructor(public MessageManage:MessageManager, public MovieManage:MovieManager, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, public sanitizer: DomSanitizer, protected spinnerService: SpinnerService, private router: Router){
 
       this.myForm = new FormGroup({
         message: new FormControl(''),
        });
     }
 
-    public showAddModal(id:number):void {
+    ngOnInit() {
+       this.carouselOne = {
+         grid: {xs: 4, sm: 4, md: 4, lg: 4, all: 0},
+         slide: 1,
+         speed: 400,
+         interval: 2000,
+         point: false,
+         load: 2,
+         custom: 'banner',
+         dynamicLength: true
+       }
+
+      //  this.zoom = 4;
+      //  this.latitude = 39.8282;
+      //  this.longitude = -98.5795;
+       //
+      //  //create search FormControl
+      //  this.searchControl = new FormControl();
+       //
+      //  //set current position
+      //  this.setCurrentPosition();
+       //
+      //  //load Places Autocomplete
+      //  this.mapsAPILoader.load().then(() => {
+      //    let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+      //      types: ["address"]
+      //    });
+      //    autocomplete.addListener("place_changed", () => {
+      //      this.ngZone.run(() => {
+      //        //get the place result
+      //        let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+       //
+      //        //verify result
+      //        if (place.geometry === undefined || place.geometry === null) {
+      //          return;
+      //        }
+       //
+      //        //set latitude, longitude and zoom
+      //        this.latitude = place.geometry.location.lat();
+      //        this.longitude = place.geometry.location.lng();
+      //        this.zoom = 12;
+      //      });
+      //    });
+      //  });
+      }
+
+      // private setCurrentPosition() {
+      //     if ("geolocation" in navigator) {
+      //       navigator.geolocation.getCurrentPosition((position) => {
+      //      this.latitude = position.coords.latitude;
+      //      this.longitude = position.coords.longitude;
+      //      this.zoom = 12;
+      //    });
+      //   }
+      // }
+
+    public showAddModalSerie(id:number):void {
+      this.messModal.name = this.arrayMessage[id].name;
+   		this.messModal.resume = this.arrayMessage[id].resume;
+  	 	this.messModal.image = this.arrayMessage[id].image;
+  		this.messModal.channel = this.arrayMessage[id].channel;
+      this.messModal.runtime = this.arrayMessage[id].runtime;
+      this.messModal.season = this.arrayMessage[id].season;
+      this.messModal.episode = this.arrayMessage[id].episode;
+      this.messModal.rating = this.arrayMessage[id].rating;
+      this.messModal.status = this.arrayMessage[id].status;
+    }
+
+    public showAddModalBook(id:number):void {
+      this.messModal.name = this.arrayMessage[id].name;
+      this.messModal.author = this.arrayMessage[id].author;
+      this.messModal.image = this.arrayMessage[id].image;
+      this.messModal.resume = this.arrayMessage[id].resume;
+      this.messModal.published_year = this.arrayMessage[id].published_year;
+    }
+
+    public showAddModalMovie(id:number):void {
+      this.spinnerService.show('mySpinner');
       this.MovieManage.getMovie(id)
         .subscribe(
           (data) => this.setSuccessMovie(data),
@@ -89,7 +182,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.shows;
       }
-      // série personnage <nidMovieomserie>
+      // série personnage <nidMovieomserie>item
       else if (data.id == "2-3")
       {
         this.numero = 5;
@@ -97,18 +190,17 @@ public myForm: FormGroup;
         this.arrayMessage = data.result.character_data;
       }
       // <acteur/actrice> joué dans <nomserie>
-      else if (data.id == "import { Sanitize } from 'angular-sanitize';2-4")
+      else if (data.id == "2-4")
       {
         this.numero = 6;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
-      // nouveau film et film <nomfilm> et film genre <nomgenre>
+      // nouveau film et film <nomfilm> et film geitemnre <nomgenre>
       else if (data.id == "3-1" || data.id == "3-4" || data.id == "3-5")
       {
         this.numero = 7;
         this.arrayMessage = data.result;
-
         //this.mess_result_id = data.result.id;
 
       }
@@ -125,6 +217,24 @@ public myForm: FormGroup;
         this.numero = 9;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
+      }
+      // livre <nomlivre> et film de <nomauteur>
+      else if (data.id == "4-1" || data.id == "4-2")
+      {
+        this.numero = 10;
+        this.arrayMessage = data.result;
+      }
+      // Télé <nomlivre> et film de <nomauteur>
+      else if (data.id == "6-1" || data.id == "6-2")
+      {
+        this.numero = 11;
+        this.arrayMessage = data.result;
+      }
+      // Restaurant
+      else if (data.id == "5-1" || data.id == "5-2")
+      {
+        this.numero = 12;
+        this.arrayMessage = data.result;
       }
     }
     else {
@@ -145,10 +255,26 @@ public myForm: FormGroup;
     this.movieModal.year =  data.result.year;
     this.movieModal.runtime = data.result.runtime;
     this.movieModal.genre = data.result.genre;
+
+    this.spinnerService.hide('mySpinner');
   }
 
   cleanURL(oldURL : string): SafeResourceUrl{
   return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL);
+  }
+
+  public carouselBannerLoad(evt: any) {
+
+    const len = this.arrayMessage.length
+    // if (len <= 10) {
+    //   for (let i = len; i < len + 10; i++) {
+    //     this.arrayMessage.push[i];
+    //   }
+    // }
+    for (let i = len; i < len; i++) {
+       this.arrayMessage.push[i];
+      }
+
   }
 
 }
