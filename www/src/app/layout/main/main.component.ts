@@ -182,7 +182,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.shows;
       }
-      // série personnage <nidMovieomserie>item
+      // série personnage <nomserie>
       else if (data.id == "2-3")
       {
         this.numero = 5;
@@ -196,7 +196,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
-      // nouveau film et film <nomfilm> et film geitemnre <nomgenre>
+      // nouveau film et film <nomfilm> et film genre <nomgenre>
       else if (data.id == "3-1" || data.id == "3-4" || data.id == "3-5")
       {
         this.numero = 7;
@@ -218,13 +218,13 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
-      // livre <nomlivre> et film de <nomauteur>
+      // livre <nomlivre> 
       else if (data.id == "4-1" || data.id == "4-2")
       {
         this.numero = 10;
         this.arrayMessage = data.result;
       }
-      // Télé <nomlivre> et film de <nomauteur>
+      // Télé
       else if (data.id == "6-1" || data.id == "6-2")
       {
         this.numero = 11;
