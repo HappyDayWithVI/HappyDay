@@ -354,14 +354,14 @@ public picture: string;
 public artist_name : string;
 public duration : number;
 public artist_uri : string;
-public owner_name : string;track_artist_name
+public owner_name : string;
 public genres = Array;
 public big_picture : string;
 public album_name : string;
 public album_uri : string;
 public album_picture : string;
 public album_artist : string;
-public track_artist_name : string;
+public track_artist_name : any;
 public track_artist_uri : string;
 
 public author: string;

@@ -38,9 +38,10 @@ function switchRecognition() {
 	if (recognition) {
 		stopRecognition();
 	} else {
-		startRecognition();http://localhost:8080
+		startRecognition();
 	}
 }
+
 function setInput(text) {
 	$("input.input__field#message").val(text);
 	send();
