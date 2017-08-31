@@ -242,7 +242,151 @@ hr{
   background-image: -ms-linear-gradient(top, #9ca9bb, #f6ad76);
   background-image: -o-linear-gradient(top, #9ca9bb, #f6ad76);
   background-image: linear-gradient(to bottom, #9ca9bb, #f6ad76);
-  text-decoration: none;
+  text-decoration: none;	background: rgba(255,255,255,.3);
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.double-bounce1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f8a873;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.bannerStyle {
+  min-height: 300px;
+  background: rgba(255,255,255,.3);
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+
+  width: 260px !important;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.bannerStyle h1 {
+  text-align: center;
+  line-height: 300px;
+}
+
+.resumeLivre {
+  position: absolute;
+  width: 260px;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+#bannerTv{
+background: rgba(255, 255, 255, 0.3);
+border-radius: 3px;
+height: 32px;
+margin-bottom: 5px;
+color: white;
+}
+
+.heureColonne {
+  text-align: center;
+  width: 11%;
+  height: 100px;
+  color:white;
+}
+
+.heure {
+  font-size: 20px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.time{
+  font-size: 16px;
+  position: relative;
+  top: 35px;
+}
+
+.chaine{
+  font-size: 20px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelTv{
+  width: 88%;
+  height: 100px;
+  color:white;
+}
+
+.channelProgramme{
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.titleTv{
+  font-size: 14px;
+}
+
+#characterRestaurant .box_Restaurant{
+  width: 245px;
+  height: 220px;
+}
+
+#characterRestaurant .infoRestaurant{
+  color: white;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+#characterRestaurant .infoDetailsRestaurant {
+padding: 20px;
+position: relative;
+font-size: 12px;
+font-weight: bold;
+color: orange;
+background-color: rgba(0,0,0,0.4);
+height: 100%;
+}
+
+.nameRestaurant{
+font-size: 22px;
+padding: 10px;
+}
+
+agm-map {
+    height: 300px;
 }
 /* ==========================================================================
    WEATHER VIEW
@@ -266,7 +410,7 @@ hr{
 }
 
 #main_weather #date{
-    margin-left: 3px;
+    font-size: 20px;
 }
 
 #main_weather #real_weather{
@@ -410,7 +554,7 @@ max-width: 180px;
 }
 
 #character div:not(#banner) .title_section{
-	font-size: 20px;
+	font-size: 14px;
 }
 
 #character #banner{
@@ -423,48 +567,567 @@ max-width: 180px;
     margin-top: 5px;
 }
 
-#informations_track{
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-right: 2%;
-    margin-bottom: 2%;
+
+/* CharactersRestaurant from tvshow  */
+#characterRestaurant .light_bg{
+	padding: 0 0 10px 0;
+	margin: 0 18px 20px;
+}
+
+#characterRestaurant #banner .banner_img{
+    max-width: 100%;
+}
+
+#characterRestaurant .box_character{
+}
+
+#characterRestaurant .character_img {
+max-width: 180px;
+}
+
+#characterRestaurant .info{
+	text-align: center;
+  width: 180px;
+}
+
+#characterRestaurant div:not(#banner) .title_section{
+	font-size: 14px;
+}
+
+#characterRestaurant #banner{
+    width: 758px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+#characterRestaurant #banner .title_section{
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  #main_weather .degMin {
+      position: absolute;
+      font-size: 20px;
+      right: 155px;
+      top: 160px;
+  }
+
+  #main_weather .degMax{
+      position: absolute;
+      right: 115px;
+      font-size: 20px;
+      right: 85px;
+      top: 160px;
+  }
+
+  #sub_weather .colSemaine {
+    width: 106.8px;
+    text-align: center;
+    margin-left: 5px;
+  }
+
+  #character #banner .banner_img {
+      max-width: 75%;
+  }
+
+  #character #banner {
+    width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  #characterRestaurant #banner .banner_img {
+      max-width: 75%;
+  }
+
+  #characterRestaurant #banner {
+    width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+
+   .title_section {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .bannerStyle {
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    width: 213px !important;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.resumeLivre {
+    width: 200px;
+}
 
 }
 
-#informations_artiste{
-    margin-left: 2%;
-    margin-top: 5%;
-    margin-right: 2%;
-    margin-bottom: 2%;
+@media screen and (max-width: 991px) {
+
+  #main_weather .degMin {
+      position: absolute;
+      font-size: 20px;
+      right: 115px;
+      top: 160px;
+  }
+
+  #main_weather .degMax{
+      position: absolute;
+      font-size: 20px;
+      right: 45px;
+      top: 160px;
+  }
+
+  #main_weather #city {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 45px;
+  }
+
+  #main_weather .day {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  #main_weather #date {
+    font-size: 15px;
+  }
+
+  #main_weather #desc {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  #sub_weather .colSemaine {
+    width: 66.8px;
+    text-align: center;
+    margin-left: 5px;
+  }
+
+  #tvshows .info {
+    width: 75%;
+    margin-left: 5px;
+    text-align: justify;
+  }
+
+  #tvshows .resume {
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    width: 213px !important;
+    margin-left: 11px;
+    margin-right: 11px;
+    font-size: 14px;
+  }
+
+  #character .light_bg {
+    padding: 0 0 10px 0;
+    margin: 0 0px 20px;
+}
+
+#characterRestaurant .light_bg {
+  padding: 0 0 10px 0;
+  margin: 0 0px 20px;
+}
+
+#characterRestaurant .light_bg {
+    padding: 0 0 10px 0;
+    margin: 0 50px 20px;
+}
+
+.bannerStyle {
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+    width: 155px !important;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.poster{
+  width: 135px;
+}
+
+.resumeLivre {
+    width: 150px;
+}
 
 }
 
-#elements{
-  margin-left: 2%;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
+@media screen and (max-width: 767px) {
+
+  #main_weather .degMin {
+      position: absolute;
+      font-size: 15px;
+      right: 95px;
+      top: 110px;
+  }
+
+  #main_weather .degMax{
+      position: absolute;
+      right: 20px;
+      font-size: 15px;
+      top: 110px;
+  }
+
+  #main_weather .icon {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+
+  #main_weather #city {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  #main_weather .day {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  #main_weather #date {
+    font-size: 15px;
+  }
+
+  #main_weather #desc {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  #main_weather .temp {
+  text-align: center;
+  font-size: 90px;
+  }
+
+  #main_weather .degre {
+    position: absolute;
+    top: 25px;
+    font-size: 25px;
+  }
+
+  #sub_weather .colSemaine {
+    width: 36.8px;
+    text-align: center;
+    margin-left: 5px;
+  }
+
+  #tvshows .info {
+    width: 60%;
+    margin-left: 5px;
+    text-align: justify;
+  }
+
+  #tvshows .resume {
+    font-size: 12px;
+  }
+
+  .title_section {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  #character #banner {
+    width: 530px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  #characterRestaurant #banner {
+    width: 530px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  #characterRestaurant .light_bg {
+      padding: 0 0 10px 0;
+      margin: 0 10px 20px;
+  }
+
+  .heure {
+    font-size: 15px;
+    font-weight: bold;
+    width: 11%;
+    text-align: center;
+  }
+
+  .chaine {
+    font-size: 15px;
+    font-weight: bold;
+    width: 88%;
+  }
+
+  .channelProgramme {
+    font-size: 24px;
+    margin-top: 15px;
+  }
+
+}
+
+@media screen and (max-width: 584px) {
+
+  #character .light_bg {
+    padding: 0 0 10px 0;
+    width: 105px;
+    margin: 0 0px 20px;
+}
+
+#characterRestaurant .light_bg {
+  padding: 0 0 10px 0;
+  margin: 0 0px 20px;
+}
+
+#character div:not(#banner) .title_section {
+    font-size: 7px;
+}
+
+#character .info {
+    text-align: center;
+    width: 100px;
+}
+
+#character .character_img {
+    max-width: 105px;
 }
 
 
-
-#information_album{
-  margin-left: 2%;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
+#characterRestaurant div:not(#banner) .title_section {
+    font-size: 7px;
 }
 
-#information_nouveauté{
-  margin-left: 2%;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
+#characterRestaurant .info {
+    text-align: center;
+    width: 100px;
 }
 
-#information_playlist{
-  margin-left: 2%;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
+#characterRestaurant .character_img {
+    max-width: 105px;
+}
+
+
+}
+
+@media screen and (max-width: 575px) {
+  #sub_weather .colSemaine {
+    text-align: center;
+    margin-left: 5px;
+  }
+
+  #sub_weather {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+
+  #main_weather, #sub_weather {
+    color: #fff;
+    margin-left: 60px;
+}
+
+.row {
+
+    margin-left: 52.5px;
+}
+
+}
+
+@media screen and (max-width: 569px) {
+
+
+#character #banner .banner_img {
+    max-width: 60%;
+}
+
+#characterRestaurant #banner .banner_img {
+    max-width: 60%;
+}
+
+.title_section {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+}
+
+#character #banner {
+    width: 400px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+#characterRestaurant #banner {
+    width: 400px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.row {
+    margin-left: 37.5px;
+}
+
+.heure {
+  font-size: 13px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.chaine {
+  font-size: 13px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelProgramme {
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+}
+
+@media screen and (max-width: 464px) {
+  #character #banner {
+    width: 340px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+#characterRestaurant #banner {
+  width: 340px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.row {
+    margin-left: 37.5px;
+}
+
+.heure {
+  font-size: 11px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.chaine {
+  font-size: 11px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelProgramme {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+}
+
+@media screen and (max-width: 449px) {
+
+  #main_weather .degMin {
+      position: absolute;
+      font-size: 15px;
+      right: 70px;
+      top: 110px;
+  }
+
+  #main_weather .degMax{
+      position: absolute;
+      right: 20px;
+      font-size: 15px;
+      top: 110px;
+  }
+
+  #main_weather .icon {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+
+  #main_weather #city {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  #main_weather .day {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  #main_weather #date {
+    font-size: 15px;
+  }
+
+  #main_weather #desc {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 13px;
+  }
+
+  #main_weather .temp {
+  text-align: center;
+  font-size: 90px;
+  }
+
+  #main_weather.degre {
+    position: absolute;
+    top: 30px;
+    font-size: 18px;
+  }
+
+  #sub_weather {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  #tvshows .info {
+    width: 55%;
+    margin-left: 5px;
+    text-align: justify;
+  }
+
+  #tvshows .resume {
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 404px) {
+  #tvshows .info {
+    width: 50%;
+    margin-left: 5px;
+    text-align: justify;
+  }
+
+  .title_section {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+  }
+
+
 }

@@ -121,6 +121,13 @@ export class MessageModels {
   public name: string;
   public resume: string;
   public image: string;
+  public details: string;
+  public channel: string;
+  public runtime: number;
+  public season: number;
+  public episode: number;
+  public rating: string;
+  public status: string;
 
   //personnage serie
   // http://localhost:8083/message/personnage%20serie%20the%20walking%20dead
@@ -233,7 +240,7 @@ export class MessageModels {
 //        "artist_uri": "spotify:artist:2z2TRvloJt4EfUNQp9rHAi"
 //      }
 //    ]
-//}
+//}track_artist_name
 
 //{
 //  "id": "10-1",
@@ -255,7 +262,7 @@ export class MessageModels {
 //            "artist_name": "Shaka Ponk",
 //            "artist_uri": "spotify:artist:0VJIBKdqJygrupAxpSTk7q"
 //          }
-//        ]
+//        ]track_artist_name
 //      }
 //    ]
 //  }
@@ -271,7 +278,7 @@ export class MessageModels {
 //        "url": "https://open.spotify.com/artist/711MCceyCBcFnzjGY4Q7Un",
 //        "uri": "spotify:artist:711MCceyCBcFnzjGY4Q7Un",
 //        "big_picture": "https://i.scdn.co/image/a16c5d95ede008ec905d6ca6d1b5abbf39ad4566",
-//        "genres": [
+//        "genres": [track_artist_name
 //          "album rock",
 //          "classic rock",
 //          "hard rock",
@@ -347,7 +354,7 @@ public picture: string;
 public artist_name : string;
 public duration : number;
 public artist_uri : string;
-public owner_name : string;
+public owner_name : string;track_artist_name
 public genres = Array;
 public big_picture : string;
 public album_name : string;
@@ -357,4 +364,12 @@ public album_artist : string;
 public track_artist_name : string;
 public track_artist_uri : string;
 
+public author: string;
+public published_year: string;
+public title;
+public time;
+public is_closed: string;
+public price: string;
+public address: string;
+public categories: string;
 }
