@@ -69,6 +69,11 @@ public myForm: FormGroup;
     }
 
     ngOnInit() {
+      var isAuth = localStorage.getItem('isAuthenticate');
+      if(isAuth == '0' || isAuth == null){
+        this.router.navigateByUrl('/login');
+      }
+
        this.carouselOne = {
          grid: {xs: 4, sm: 4, md: 4, lg: 4, all: 0},
          slide: 1,

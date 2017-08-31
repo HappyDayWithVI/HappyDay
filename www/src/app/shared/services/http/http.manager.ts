@@ -17,15 +17,17 @@ export class HttpManagerService {
     this.headers.set("Access-Control-Allow-Credentials", "true");
   }
 
-  // tokenHeader(){
-  //   if(localStorage.getItem('token') != undefined && localStorage.getItem('token') != null && localStorage.getItem('token') != ""){
-  //     this.headers.set('authorization', 'Bearer '+localStorage.getItem('token'));
-  //   }
-  // }
+  tokenHeader(){
+    if(localStorage.getItem('token') != undefined && localStorage.getItem('token') != null && localStorage.getItem('token') != ""){
+      this.headers.set('Authorization', localStorage.getItem('token'));
+    }
+  }
+
+
 
   // CRUD API
   get(chaineUrl:string){
-    //this.tokenHeader();
+    this.tokenHeader();
     this.headers.set('Access-Control-Allow-Methods', 'GET');
 
     return this.http.get(this.url+"/"+chaineUrl, {headers:this.headers})
@@ -40,7 +42,7 @@ export class HttpManagerService {
                     .map(response => response.json());
   }
 
-  post(creds:Object, chaineUrl:string){
+  post(creds:Object, chaineUrl:string, options:any){
     //this.tokenHeader();
     this.headers.set('Access-Control-Allow-Methods', 'POST');
 

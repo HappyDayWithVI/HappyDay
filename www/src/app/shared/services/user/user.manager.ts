@@ -12,6 +12,8 @@ export class UserManager {
 
   }
 
+  options;
+
   getUsers(){
     return this.httpmanagerService.get('api/user')
   }
@@ -25,7 +27,7 @@ export class UserManager {
   }
 
   postUser(data:Object){
-    return this.httpmanagerService.post(data,'api/user')
+    // return this.httpmanagerService.post(data,'api/user')
   }
 
   putUser(data:any){
@@ -42,9 +44,9 @@ export class UserManager {
 
   registerUser(data) {
     console.log(data);
-    console.log(JSON.stringify(data));
+    this.options = '';
     // return this.httpmanagerService.get('login/?username='+data.username+'&password='+data.password);
-    return this.httpmanagerService.post(JSON.stringify(data), 'register/');
+    return this.httpmanagerService.post({ 'foo': 'bar' }, 'register/', this.options).map(res=>res.json());
   }
 
   private handleError(error: any): Promise<any> {

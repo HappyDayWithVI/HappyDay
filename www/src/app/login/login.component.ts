@@ -20,55 +20,67 @@ export class LoginComponent implements OnInit {
   constructor(public UserManage:UserManager, private router:Router) { }
 
   public loadScript() {
-          let node = document.createElement('script');
-          node.src = 'https://apis.google.com/js/platform.js';
-          node.type = 'text/javascript';
-          node.async = true;
-          node.charset = 'utf-8';
-          document.getElementsByTagName('head')[0].appendChild(node);
+    let node = document.createElement('script');
+    node.src = 'https://apis.google.com/js/platform.js';
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    document.getElementsByTagName('head')[0].appendChild(node);
 
-          let js = document.createElement('script');
-          js.src = '../assets/js/main.js?v=0.0.29';
-          js.type = 'text/javascript';
-          js.async = true;
-          js.charset = 'utf-8';
-          document.getElementsByTagName('head')[0].appendChild(js);
-      }
+    let js = document.createElement('script');
+    js.src = '../assets/js/main.js?v=0.0.29';
+    js.type = 'text/javascript';
+    js.async = true;
+    js.charset = 'utf-8';
+    document.getElementsByTagName('head')[0].appendChild(js);
+  }
 
-      ngOnInit() {
-          this.loadScript();
-          
-      }
+  ngOnInit() {
+    console.log(localStorage.getItem('token'));
+    console.log(localStorage.getItem('isAuthenticate'));
+    console.log(localStorage.getItem('name'));
+    
+    if(localStorage.getItem('isAuthenticate')){
+      this.router.navigateByUrl('/main');
+    }
+    this.loadScript();
+  }
 
-      ngAfterContentChecked(){
-      }
+  ngAfterContentChecked(){  }
 
 
   login(usercreds) {
-      this.UserManage.login(usercreds)
-         .subscribe(
-              (data) => this.setSuccess(data),
-              (err) => this.setError(err.json())
-          );
+    this.UserManage.login(usercreds)
+      .subscribe(
+        (data) => this.setSuccess(data),
+        (err) => this.setError(err.json())
+      );
+  }
+
+  onLoggedout(){
+    console.log("Déconnexion ?");
   }
 
   googlesubmit(usercreds){
-      var googleID = (<HTMLInputElement>document.getElementById("g_login")).value;
+    var googleID = (<HTMLInputElement>document.getElementById("g_login")).value;
   }
 
   private setSuccess(data:any){
-        if(!data.error){
-            alert(data.status);
-            alert(data.subtoken);
-            this.router.navigateByUrl('/main');
-        } else {
-            this.setError(data);
-        }
+    if(!data.error){
+      console.log(data);
+      localStorage.setItem('token', data.subtoken);
+      localStorage.setItem('isAuthenticate', '1');
+      localStorage.setItem('name', data.firstname);
+
+
+      this.router.navigateByUrl('/main');
+    } else {
+      this.setError(data);
     }
+  }
     
-    //
-    private setError(err:any){
-        //this.error = err.message;
-    }
+  private setError(err:any){
+      //this.error = err.message;
+  }
 
 }
