@@ -305,12 +305,14 @@ background: rgba(255, 255, 255, 0.3);
 border-radius: 3px;
 height: 32px;
 margin-bottom: 5px;
+color: white;
 }
 
 .heureColonne {
   text-align: center;
   width: 11%;
   height: 100px;
+  color:white;
 }
 
 .heure {
@@ -335,10 +337,11 @@ margin-bottom: 5px;
 .channelTv{
   width: 88%;
   height: 100px;
+  color:white;
 }
 
 .channelProgramme{
-    font-size: 16px;
+    font-size: 35px;
     margin-top: 15px;
 }
 
@@ -364,7 +367,7 @@ position: relative;
 font-size: 12px;
 font-weight: bold;
 color: orange;
-background-color: rgba(0,0,0,0.6);
+background-color: rgba(0,0,0,0.4);
 height: 100%;
 }
 
@@ -542,7 +545,7 @@ max-width: 180px;
 }
 
 #character div:not(#banner) .title_section{
-	font-size: 20px;
+	font-size: 14px;
 }
 
 #character #banner{
