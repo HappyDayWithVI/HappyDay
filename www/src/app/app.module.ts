@@ -11,6 +11,9 @@ import { AuthGuard } from './shared';
 
 import { HttpManagerService } from './shared/services/http/http.manager';
 
+import * as $ from 'jquery';
+
+
 //import { APP_BASE_HREF } from '@angular/common';
 // AoT requires an exported function for factories
 

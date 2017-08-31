@@ -1,15 +1,19 @@
-var id_google = "";
-
 function onSignIn(googleUser) {
 	var profile = googleUser.getBasicProfile();
-	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	console.log('Name: ' + profile.getName());
-	console.log('Image URL: ' + profile.getImageUrl());
-	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	id_google = profile.getId();
 
 	$("#g_login").val(id_google);
 	$("#g_login").text(id_google);
 
 	$("#g_login_btn").click();
+}
+
+function onSignInRegister(googleUser) {
+	var profile = googleUser.getBasicProfile();
+	var name = profile.getName().split(" ");
+
+	$("#register_name").val(name[0]);
+	$("#register_lastname").val(name[1]);
+	$("#register_email").val(profile.getEmail());
+	$("#register_googleid").val(profile.getId());
 }

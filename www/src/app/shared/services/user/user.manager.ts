@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpManagerService } from '../http/http.manager';
 
-// import { UserModels } from '../../models/user/user.models';
+import 'rxjs/add/operator/toPromise';
+
+import { UserModels } from '../../models/user/user.models';
 
 @Injectable()
 export class UserManager {
@@ -35,11 +37,18 @@ export class UserManager {
   }
 
   login(data:any){
-    // alert(data);
-    
-    // alert(data.username);
-
     return this.httpmanagerService.get('login/?username='+data.username+'&password='+data.password);
-    // console.log(data);
+  }
+
+  registerUser(data) {
+    console.log(data);
+    console.log(JSON.stringify(data));
+    // return this.httpmanagerService.get('login/?username='+data.username+'&password='+data.password);
+    return this.httpmanagerService.post(JSON.stringify(data), 'register/');
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 }

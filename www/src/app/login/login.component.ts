@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   constructor(public UserManage:UserManager, private router:Router) { }
 
   public loadScript() {
-          console.log('preparing to load...')
           let node = document.createElement('script');
           node.src = 'https://apis.google.com/js/platform.js';
           node.type = 'text/javascript';

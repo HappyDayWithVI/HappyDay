@@ -1,0 +1,559 @@
+.formMessage{
+text-align: center;
+font-family: 'Open Sans', sans-serif;
+}
+
+.microMessage{
+margin-top: -30px;
+margin-left: 10px;
+}
+
+.box{
+  width:50px;
+  height:50px;
+  border-top:2px solid #fff;
+  border-radius:50%;
+  margin:10px auto 50px;
+  background-color:#EEEEEE;
+  background: linear-gradient(#EDEAE1,#CDC8B5);
+  text-align:center;
+  box-shadow:
+    0 5px 2px 3px rgba(158, 158, 158, 0.4),
+    0 3px 5px #B7B6B6,
+    0 0 0 2px #BBB7AE,
+    inset 0 -3px 1px 2px rgba(186, 178, 165, 0.5),
+    inset 0 3px 1px 2px rgba(246, 245, 241, 0.3);
+  cursor:pointer;
+  position:relative;
+}
+
+.box span{
+  display:inline-block;
+  box-shadow:
+    inset 0 1px 1px 1px #7E7E7E,
+    0 1px 1px white;
+  height:5px;
+  width:5px;
+  border-radius:50%;
+  background: linear-gradient(#AEADAA,#BAB7AE);
+  margin:20px auto;
+}
+
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em;
+	max-width: 700px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+    font-size: 20px;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #aaa;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: #6a7989;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+  font-size: 20px;
+}
+
+.graphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	fill: none;
+}
+
+.icon {
+	color: #ddd;
+	font-size: 150%;
+}
+
+/* Isao */
+.input__field--isao {
+	z-index: 10;
+	padding: 0.75em 0.1em 0.25em;
+	width: 100%;
+	background: transparent;
+	color: White;
+}
+
+.input__label--isao {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	color: #dadada;
+	text-align: left;
+}
+
+.input__label--isao::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 7px;
+	background: #dadada;
+	-webkit-transform: scale3d(1, 0.4, 1);
+	transform: scale3d(1, 0.4, 1);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+	transition: transform 0.3s, background-color 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__label--isao::after {
+	content: attr(data-content);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.75em 0.15em;
+	color: #da7071;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 50%, 0);
+	transform: translate3d(0, 50%, 0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	pointer-events: none;
+}
+
+.input__field--isao:focus + .input__label--isao::before {
+	background-color: #da7071;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+
+.input__field--isao:focus + .input__label--isao {
+	pointer-events: none;
+}
+
+.input__field--isao:focus + .input__label--isao::after {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__label-content--isao {
+	padding: 0.75em 0.15em;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__field--isao:focus + .input__label--isao .input__label-content--isao {
+	opacity: 0;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+}
+
+.light_bg{
+	background: rgba(255,255,255,.3);
+	padding: 20px;
+	border-radius: 3px;
+}
+
+.flr{ float: right; }
+.fll{ float: left; }
+
+.title_section{
+	text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+}
+
+hr{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.btnModal {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -moz-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -ms-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: -o-linear-gradient(top, #f6ad76, #fa696f);
+  background-image: linear-gradient(to bottom, #f6ad76, #fa696f);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btnModal:hover {
+  background: #9ca9bb;
+  background-image: -webkit-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -moz-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -ms-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: -o-linear-gradient(top, #9ca9bb, #f6ad76);
+  background-image: linear-gradient(to bottom, #9ca9bb, #f6ad76);
+  text-decoration: none;	background: rgba(255,255,255,.3);
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.double-bounce1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f8a873;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.bannerStyle {
+  min-height: 300px;
+  background: rgba(255,255,255,.3);
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+
+  width: 260px !important;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.bannerStyle h1 {
+  text-align: center;
+  line-height: 300px;
+}
+
+.resumeLivre {
+  position: absolute;
+  width: 260px;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+#bannerTv{
+background: rgba(255, 255, 255, 0.3);
+border-radius: 3px;
+height: 32px;
+margin-bottom: 5px;
+color: white;
+}
+
+.heureColonne {
+  text-align: center;
+  width: 11%;
+  height: 100px;
+  color:white;
+}
+
+.heure {
+  font-size: 20px;
+  font-weight: bold;
+  width: 11%;
+  text-align: center;
+}
+
+.time{
+  font-size: 16px;
+  position: relative;
+  top: 35px;
+}
+
+.chaine{
+  font-size: 20px;
+  font-weight: bold;
+  width: 88%;
+}
+
+.channelTv{
+  width: 88%;
+  height: 100px;
+  color:white;
+}
+
+.channelProgramme{
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.titleTv{
+  font-size: 14px;
+}
+
+#character .box_Restaurant{
+  width: 245px;
+  height: 220px;
+}
+
+#character .infoRestaurant{
+  color: white;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+#character .infoDetailsRestaurant {
+padding: 20px;
+position: relative;
+font-size: 12px;
+font-weight: bold;
+color: orange;
+background-color: rgba(0,0,0,0.4);
+height: 100%;
+}
+
+.nameRestaurant{
+font-size: 22px;
+padding: 10px;
+}
+
+agm-map {
+    height: 300px;
+}
+/* ==========================================================================
+   WEATHER VIEW
+============================================================================= */
+#main_weather,
+#sub_weather{
+	color: #fff;
+}
+
+#main_weather #city{
+	text-transform: uppercase;
+    font-weight: bold;
+    font-size: 55px;
+}
+
+#main_weather .day{
+	text-transform: uppercase;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+#main_weather #date{
+    margin-left: 3px;
+}
+
+#main_weather #real_weather{
+	text-align: center;
+}
+
+#main_weather .icon{
+	width: 150px;
+	margin-bottom: 15px;
+}
+
+#main_weather #desc{
+	text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+#main_weather .temp{
+	text-align: center;
+	font-size: 125px;
+}
+
+#main_weather .degre{
+  position:absolute;
+  top:40px;
+  font-size: 32px;
+}
+
+#main_weather .degMin{
+    position: absolute;
+    font-size: 20px;
+    right:190px;
+    top: 160px;
+}
+
+#main_weather .degMax{
+    position: absolute;
+    right:115px;
+    font-size: 20px;
+    top: 160px;
+}
+
+#sub_weather{
+	margin-top: 15px;
+  margin-left: 7px;
+}
+
+#sub_weather .colSemaine{
+  width: 136.8px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+#sub_weather .day{
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+#sub_weather .icon{
+	width: 28px;
+	margin-bottom: 10px;
+}
+
+#sub_weather .temp{
+	position: relative;
+  font-size: 25px;
+}
+
+#sub_weather .degre{
+  position: relative;
+  bottom: 9px;
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   TVSHOW VIEW
+============================================================================= */
+
+/* General */
+#tvshows .light_bg{
+	margin-bottom: 15px;
+	padding: 0;
+}
+
+#tvshows .poster{
+	width: 150px;
+}
+
+#tvshows .info{
+	  width: 78%;
+    margin-left: 25px;
+    text-align: justify;
+}
+
+#tvshows .resume{
+  font-size: 15px;
+}
+
+/* Modal  */
+
+.modal.modal-wide .modal-dialog {
+  width: 50%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+.posterModal{
+	width: 200px;
+}
+
+.colModal1{
+
+}
+
+.colModal2{
+  width: 50%;
+  margin-left: 25px;
+}
+
+/* Characters from tvshow  */
+#character .light_bg{
+	padding: 0 0 10px 0;
+	margin: 0 18px 20px;
+}
+
+#character #banner .banner_img{
+    max-width: 100%;
+}
+
+#character .box_character{
+}
+
+#character .character_img {
+max-width: 180px;
+}
+
+#character .info{
+	text-align: center;
+  width: 180px;
+}
+
+#character div:not(#banner) .title_section{
+	font-size: 14px;
+}
+
+#character #banner{
+    width: 758px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+#character #banner .title_section{
+    margin-top: 5px;
+}
