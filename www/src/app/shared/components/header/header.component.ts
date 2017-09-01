@@ -34,8 +34,6 @@ export class HeaderComponent implements OnInit {
 
         this.name=localStorage.getItem("lastname");
 
-        console.log("11 "+localStorage.getItem("lastname"));
-
     }
 
 

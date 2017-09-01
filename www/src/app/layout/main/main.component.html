@@ -259,7 +259,7 @@
                     </div>
                   </spinner>
                 </div>
-                
+
                 <label for="resume">Resume : {{movieModal.resume}}</label><br>
             </div>
           </div>
@@ -327,6 +327,103 @@
   	   </div>
      </div>
 
+   </div>
+  </div>
+</div>
+
+<div *ngIf="numero == 13">
+    <div class="container spotify">
+      <div id="character">
+        <div *ngFor="let entry of arrayMessage; let i=index">
+          <div class="light_bg">
+            <div class="clearfix">
+              <div class="fll" id="information_musique">
+                <div class="name title_section"><h1>{{entry.name}}</h1> de {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div *ngIf="numero == 14">
+    <div class="container">
+      <div id="character">
+        <div *ngFor="let entry of arrayMessage; let i=index">
+          <div class="light_bg">
+            <div class="clearfix">
+              <div class="fll" id="information_musique">
+                <div class="name title_section"><h1>{{entry.name}}</h1> de {{entry.artist_name}}</div>
+                <iframe id="elements" [src]="cleanURL(entry.uri)" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="numero == 15">
+    <div class="container">
+      <div id="character">
+        <div *ngFor="let entry of arrayMessage; let i=index">
+          <div class="light_bg">
+            <div class="clearfix">
+              <div class="fll" id="information_musique">
+                <div class="name title_section">{{entry.name}}</div>
+                <iframe [src]="cleanURL(entry.uri)" width="800" height="300" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+              <div class="fll info" id="informations_artiste">
+                <hr>
+                <div class="music_textcontents_genre">Genre</div>
+                <div class="music_textcontents" *ngFor="let name of entry.genres">{{name}}</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="numero == 16">
+    <div class="container">
+      <div id="character">
+        <div *ngFor="let entry of arrayMessage; let i=index">
+          <div class="light_bg">
+            <div class="clearfix musicdetail">
+              <div class="fll">
+                <iframe id="information_musique" [src]="cleanURL(entry.uri)" width="800" height="110" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+              <div class="fll info" id="information_musique_details">
+                <hr>
+                <p class="music_textcontents_details">Titre : {{entry.name}}</p>
+                <p class="music_textcontents_details">Durée : {{entry.duration}}</p>
+                <p class="music_textcontents_details">Artiste : {{entry.album_artist}}</p>
+                <p class="music_textcontents_details">Album : {{entry.album_name}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="numero == 17">
+    <div class="container">
+      <div id="character">
+        <div *ngFor="let entry of arrayMessage; let i=index">
+          <div class="light_bg">
+            <div class="clearfix" id="information_musique">
+              <div class="name title_section">{{entry.name}}</div>
+              <div class="music_textcontents">Propriétaire : {{entry.owner_name}}</div>
+              <div class="fll info" id="elements">
+                <iframe [src]="cleanURL(entry.uri)" width="1000" height="400" frameborder="0" allowtransparency="true"></iframe>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
@@ -453,7 +550,7 @@
 <!-- Restaurant -->
 <div *ngIf="numero == 12">
   <div class="container">
-    <div id="character">
+    <div id="characterRestaurant">
 
       <div class="row">
     	  <div *ngFor="let entry of arrayMessage; let i=index">

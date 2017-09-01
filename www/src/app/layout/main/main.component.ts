@@ -50,6 +50,7 @@ public carouselOne: Carousel;
 	mess = new MessageModels();
   test = new MessageModels();
   mess_result_id = new MessageModels();
+
   numero: number = 0;
 
  movie = new MovieModels();
@@ -58,6 +59,7 @@ public carouselOne: Carousel;
 
  @ViewChild("search")
  public searchElementRef: ElementRef;
+
 
 public myForm: FormGroup;
 
@@ -165,7 +167,7 @@ public myForm: FormGroup;
         (err) => this.setError(err.json())
      );
     }
-//
+
   private setSuccess(data:any){
  		if(!data.error){
       // météo <ville>
@@ -187,7 +189,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.shows;
       }
-      // série personnage <nidMovieomserie>item
+      // série personnage <nomserie>
       else if (data.id == "2-3")
       {
         this.numero = 5;
@@ -201,7 +203,7 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
-      // nouveau film et film <nomfilm> et film geitemnre <nomgenre>
+      // nouveau film et film <nomfilm> et film genre <nomgenre>
       else if (data.id == "3-1" || data.id == "3-4" || data.id == "3-5")
       {
         this.numero = 7;
@@ -223,30 +225,73 @@ public myForm: FormGroup;
         this.mess = data.result;
         this.arrayMessage = data.result.role_data;
       }
-      // livre <nomlivre> et film de <nomauteur>
-      else if (data.id == "4-1" || data.id == "4-2")
+      else if (data.id == "3-3")
+      {
+        this.numero = 9;
+        this.mess = data.result;
+        this.arrayMessage = data.result.role_data;
+      }
+      //musique nouveautés
+      else if (data.id == "4-1" || data.id == "4-2" )
       {
         this.numero = 10;
         this.arrayMessage = data.result;
       }
-      // Télé <nomlivre> et film de <nomauteur>
-      else if (data.id == "6-1" || data.id == "6-2")
+      else if (data.id == "5-1" || data.id == "5-2" )
+      {
+        this.numero = 12;
+        this.arrayMessage = data.result;
+      }
+      else if (data.id == "6-1" || data.id == "6-2" )
       {
         this.numero = 11;
         this.arrayMessage = data.result;
       }
-      // Restaurant
-      else if (data.id == "5-1" || data.id == "5-2")
+      else if (data.id == "10-0")
       {
-        this.numero = 12;
-        this.arrayMessage = data.result;
+        this.numero = 13;
+        this.mess = data.result;
+        this.arrayMessage = data.result.new_releases;
+      }
+      //musique albums
+      else if (data.id == "10-1")
+      {
+        this.numero = 14;
+        this.mess = data.result;
+        this.arrayMessage = data.result.albums;
+      }
+      //musique artiste
+      else if (data.id == "10-2")
+      {
+        this.numero = 15;
+        this.mess = data.result;
+        this.arrayMessage = data.result.artist;
+      }
+      //musique chanson
+      else if (data.id == "10-3")
+      {
+        this.numero = 16;
+        this.mess = data.result;
+        this.arrayMessage = data.result.tracks;
+      }
+      //musique playlist
+       //
+      //  //create search FormControl
+      //  this.searchControl = new FormControl();
+       //
+      //  //set current position
+      else if (data.id == "10-4")
+      {
+        this.numero = 17;
+        this.mess = data.result;
+        this.arrayMessage = data.result.playlists;
       }
     }
     else {
  			this.setError(data);
  		}
  	}
-//
+
  private setError(err:any){
    this.error = err.message;
  }
@@ -263,6 +308,7 @@ public myForm: FormGroup;
 
     this.spinnerService.hide('mySpinner');
   }
+
 
   cleanURL(oldURL : string): SafeResourceUrl{
   return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL);

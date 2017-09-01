@@ -22,7 +22,7 @@ function startRecognition() {
 	};
 	recognition.onend = function() {
 		stopRecognition();
-	};
+	};http://localhost:8080
 	recognition.lang = "fr-FR";
 	recognition.start();
 }
@@ -41,6 +41,7 @@ function switchRecognition() {
 		startRecognition();
 	}
 }
+
 function setInput(text) {
 	$("input.input__field#message").val(text);
 	send();
@@ -56,7 +57,7 @@ function send() {
 function getResponseVoice(val){
 	$('.input__field.input__field--isao').val(val);
 	$.ajax({
-		url: "http://api.tutosweb.dev/message/" + val,
+		url: "http://localhost:8084/message/" + val,
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data) {
