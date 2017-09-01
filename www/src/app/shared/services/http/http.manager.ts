@@ -5,7 +5,7 @@ import { Http, Headers } from '@angular/http';
 export class HttpManagerService {
 
   //public url:string = "http://192.168.1.115:8000";
-  public url:string = "http://localhost:8083";
+  public url:string = "https://api.tutosweb.fr";
   //public clientSecret:string = 'CDJlZYPbdvcRCapMdYy3uscavSEcGThCfmbct61B';
   private headers:Headers = new Headers();
 
@@ -14,7 +14,7 @@ export class HttpManagerService {
     //this.headers.set('Access-Control-Allow-Origin', '*');
     this.headers.set("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
     //this.headers.set("Access-Control-Allow-Methods", "GET, PUT, POST");
-    this.headers.set("Access-Control-Allow-Credentials", "true");
+    //this.headers.set("Access-Control-Allow-Credentials", "true");
   }
 
   // tokenHeader(){
