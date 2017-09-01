@@ -1,33 +1,22 @@
 # HappyDay
 
-Getting Started
+Getting Started <br>
 
-Installing NodeJS
+Installing NodeJS <br>
 
-Step by step tutorial
+Step by step tutorial <br>
 
-First, you need to install php.
+First, you need to install php. <br>
 
-On Directory www :
+On Directory www : <br>
 sudo apt-get install update <br>
 sudo apt-get install php <br>
-sudo apt-get install nodejs npm <br>
+sudo apt-get install nodejs npm <br> <br>
 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - <br>
-sudo apt-get install -y nodejs <br>
+sudo apt-get install -y nodejs <br> <br>
 
-Be sure to have, mbstring and dom extension install.
+npm install <br>
+npm start or modify port => npm start -- --port=XXXX (ex : npm start -- --port=8080) <br>
 
-Then install composer as told here
-
-You now have to install all dependencies.
-
-cd HappyDay && composer install
-Final step, running on yout local env.
-
-On Directory www :
-npm install
-npm start or modify port => npm start -- --port=XXXX (ex : npm start -- --port=8080)
-
-php -S localhost:8080 -t public
 And OK LET'S GO !
