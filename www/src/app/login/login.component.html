@@ -1,17 +1,18 @@
-<div class="container">
+<img src="../../../../assets/images/logo.png" alt="HappyDayWithVi" id="logo">
+
+<div class="container" id="login_form">
     <div class="row">
         <div class="well col-md-4 col-md-offset-4">
             <div class="text-center"><h5>CONNEXION</h5></div>
-            <input class="form-control" placeholder="username" [(ngModel)]="user.username">
-            <input class="form-control" type="password" placeholder="password" [(ngModel)]="user.password">
+            <input class="form-control" placeholder="Nom d'utilisateur" [(ngModel)]="user.username">
+            <input class="form-control" type="password" placeholder="Mot de passe" [(ngModel)]="user.password">
             <br>
-            <button class="btn-secondary btn pull-right" (click)="login(user)">Se connecter</button>
-            <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
-
-            <form id="g_form" action="/loging">
+            <form id="g_form" action="/loging" class="pull-right">
                 <input type="hidden" name="g_login" class="form-control input-underline input-lg" id="g_login" placeholder="google">
-                <button id="g_login_btn" type="button" (click)="googlesubmit(google)"><div class="g-signin2" data-onsuccess="onSignIn"></div></button>
+                <button id="g_login_btn" type="button" class="btn-warning btn " (click)="googlesubmit(google)"><div class="g-signin2" data-onsuccess="onSignIn"></div></button>
             </form>
+            <button class="btn-secondary btn pull-right btn-warning" (click)="login(user)">Se connecter</button>
+            <a class="btn rounded-btn btn-warning" [routerLink]="['/signup']">S'inscrire</a>
         </div>
     </div>
 </div>

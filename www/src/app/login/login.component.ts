@@ -36,10 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(localStorage.getItem('token'));
-    console.log(localStorage.getItem('isAuthenticate'));
-    console.log(localStorage.getItem('name'));
-    
+
     if(localStorage.getItem('isAuthenticate')){
       this.router.navigateByUrl('/main');
     }

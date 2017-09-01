@@ -101,7 +101,7 @@
     					<div class="name title_section">{{entry.name}}</div>
     					<hr>
     					<p class="resume">{{entry.resume}}</p>
-              <button type="button" class="btnModal" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModalSerie(i)">Plus de détails</button>
+              <button type="button" class="btnModal btn btn-warning pull-right" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModalSerie(i)">Plus de détails</button>
     				</div>
     			</div>
     		</div>
@@ -220,7 +220,7 @@
     					<div class="name title_section">{{entry.name}}</div>
     					<hr>
     					<p class="resume">{{entry.resume}}</p>
-              <button type="button" class="btnModal" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModalMovie(entry.id)">Plus de détails</button>
+              <button type="button" class="btnModal btn btn-warning pull-right" id="lgModal" data-toggle="modal" data-target="#myModal" (click)="showAddModalMovie(entry.id)">Plus de détails</button>
     				</div>
     			</div>
     		</div>
@@ -394,7 +394,7 @@
            </div>
            <div class="fll colModal2">
                <label for="channel">Titre : {{messModal.name}}</label>
-               <label for="author">Auteur : {{messModal.author}} minutes</label><br>
+               <label for="author">Auteur : {{messModal.author}}</label><br>
                <label for="published_year">Publié : {{messModal.published_year}}</label><br>
                <label for="resume">Resumé : {{messModal.resume}}</label>
            </div>
@@ -464,9 +464,9 @@
                       <div class="infoDetailsRestaurant">
                         <div class="nameRestaurant">{{entry.name}}</div>
                         <div class="address">{{entry.address}}</div>
-                        <div class="categories">Catégorie : {{entry.categories}}</div>
-                        <div class="notation">Note : {{entry.rating}}/10</div>
-                        <div class="price">Niveau prix : {{entry.price}}</div>
+                        <div class="categories"><strong>Catégorie :</strong> {{entry.categories}}</div>
+                        <div class="notation"><strong>Note :</strong> {{entry.rating}}/10</div>
+                        <div class="price"><strong>Niveau prix :</strong> {{entry.price}}</div>
                       </div>
                     </div>
             			</div>

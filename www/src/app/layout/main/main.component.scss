@@ -210,7 +210,7 @@ hr{
 }
 
 .btnModal {
-  background: #3498db;
+/*  background: #3498db;
   background-image: -webkit-linear-gradient(top, #f6ad76, #fa696f);
   background-image: -moz-linear-gradient(top, #f6ad76, #fa696f);
   background-image: -ms-linear-gradient(top, #f6ad76, #fa696f);
@@ -219,13 +219,16 @@ hr{
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;
-  font-family: Arial;
   color: #ffffff;
-  font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  */
+  
+  font-family: Arial;
+  font-size: 15px;
 }
 
+/*
 .btnModal:hover {
   background: #9ca9bb;
   background-image: -webkit-linear-gradient(top, #9ca9bb, #f6ad76);
@@ -235,6 +238,7 @@ hr{
   background-image: linear-gradient(to bottom, #9ca9bb, #f6ad76);
   text-decoration: none;	background: rgba(255,255,255,.3);
 }
+*/
 
 .spinner {
     position: absolute;
@@ -351,7 +355,7 @@ color: white;
 
 #character .box_Restaurant{
   width: 245px;
-  height: 220px;
+  height: 190px;
 }
 
 #character .infoRestaurant{
@@ -366,8 +370,7 @@ padding: 20px;
 position: relative;
 font-size: 12px;
 font-weight: bold;
-color: orange;
-background-color: rgba(0,0,0,0.4);
+background-color: rgba(0,0,0,0.6);
 height: 100%;
 }
 

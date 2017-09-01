@@ -70,3 +70,37 @@ $topnav-background-color: #222;
 .header .navbar {
     background: $topnav-background-color !important;
 }
+
+.header{
+    text-align: right;
+    padding: 15px 15px;
+}
+
+.cp{cursor:pointer;}
+
+#main_menu ul{
+    float:right;
+    list-style-type: none;
+}
+
+#main_menu li{
+    width: 150px;
+    float: left;
+    font-size: 15px;
+}
+
+#main_menu a{
+    font-weight:bold;
+    color:#fff;
+}
+
+#main_menu a:hover{
+    color:#888;
+}
+
+#logo{
+    width: 550px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+}
